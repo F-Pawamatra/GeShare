@@ -21,7 +21,16 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> {
         backgroundColor: Colors.transparent,
         leading: null,
         automaticallyImplyLeading: false,
-        title: const Text("Dashboard"),
+        title: Text(
+          "Dashboard",
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 17.0
+              )
+          ),
+        ),
         actions: <Widget>[
           Stack(
             alignment: Alignment.center,
@@ -37,7 +46,7 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> {
               Container(
                 child: Text(
                   "!",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     color: Colors.black,
                     fontWeight: FontWeight.bold
                   )
@@ -45,6 +54,7 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> {
               )
             ],
           ),
+          Padding(padding: EdgeInsets.only(right: 16)),
           CircleAvatar(),
           Padding(padding: EdgeInsets.only(right: 16.0))
         ],

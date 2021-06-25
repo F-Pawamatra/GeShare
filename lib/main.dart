@@ -10,7 +10,7 @@ void main() {
     title: "Login Register Page",
     initialRoute: "/",
     routes: {
-      "/" : (context) => LoginPage(),
+      "/" : (context) => PasienDashboardPage(),
       RegisterPage.routeName : (context) => RegisterPage(),
       PasienDashboardPage.routeName : (context) => PasienDashboardPage()
     },
