@@ -20,12 +20,12 @@ class DashboardNeedsListItem extends StatelessWidget {
     tagColor = tagColor ?? Colors.green.shade400;
 
     return Container(
+      width: double.infinity,
+      padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white, ),
         borderRadius: BorderRadius.circular(16.0)
       ),
-      width: double.infinity,
-      padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
       child: DefaultTextStyle(
         style: TextStyle(fontSize: 16, color: Colors.white),
         child: Column(
@@ -42,12 +42,13 @@ class DashboardNeedsListItem extends StatelessWidget {
             Text(shortDescription),
             Padding(padding: EdgeInsets.only(top: 10.0)),
             Container(
+              padding: EdgeInsets.fromLTRB(24, 4, 24, 4),
+              child: Text(tagText),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
                 color: tagColor,
               ),
-              padding: EdgeInsets.fromLTRB(24, 4, 24, 4),
-              child: Text(tagText),)
+            ),
           ],
         ),
       )

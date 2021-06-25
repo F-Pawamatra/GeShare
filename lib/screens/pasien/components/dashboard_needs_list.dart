@@ -33,13 +33,13 @@ class DashboardNeedsList extends StatelessWidget {
                 child: Icon(Icons.add, size: 40.0),
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.all(16),
+                  primary: Colors.transparent,
                   shape: CircleBorder(
                     side: BorderSide(
                       color: Colors.white,
                       width: 2,
                     )
                   ),
-                  primary: Colors.transparent
                 ),
               )
             ),
