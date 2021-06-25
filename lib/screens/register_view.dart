@@ -69,6 +69,10 @@ class RegisterPage extends StatelessWidget {
         ),
         TextFormField(
           decoration: const InputDecoration(
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
@@ -82,7 +86,7 @@ class RegisterPage extends StatelessWidget {
                 width: 3.0,
               ),
             ),
-            hintText: " Username",
+            hintText: " Full Name",
             hintStyle: TextStyle(color: ColorPalette.hintColor),
           ),
           style: TextStyle(color: Colors.white),
@@ -93,6 +97,66 @@ class RegisterPage extends StatelessWidget {
         ),
         TextFormField(
           decoration: const InputDecoration(
+            icon: Icon(
+              Icons.phone,
+              color: Colors.white,
+            ),
+            border: UnderlineInputBorder(),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: ColorPalette.underlineTextField, 
+                width: 1.5,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 3.0,
+              ),
+            ),
+            hintText: " Phone Number",
+            hintStyle: TextStyle(color: ColorPalette.hintColor),
+          ),
+          style: TextStyle(color: Colors.white),
+          autofocus: false,
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 12.0),
+        ),
+        TextFormField(
+          decoration: const InputDecoration(
+            icon: Icon(
+              Icons.mail,
+              color: Colors.white,
+            ),
+            border: UnderlineInputBorder(),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: ColorPalette.underlineTextField, 
+                width: 1.5,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 3.0,
+              ),
+            ),
+            hintText: " Email",
+            hintStyle: TextStyle(color: ColorPalette.hintColor),
+          ),
+          style: TextStyle(color: Colors.white),
+          autofocus: false,
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 12.0),
+        ),
+        TextFormField(
+          decoration: const InputDecoration(
+            icon: Icon(
+              Icons.lock,
+              color: Colors.white,
+            ),
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
@@ -118,6 +182,10 @@ class RegisterPage extends StatelessWidget {
         ),
         TextFormField(
           decoration: const InputDecoration(
+            icon: Icon(
+              Icons.lock,
+              color: Colors.white,
+            ),
             border: UnderlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
@@ -157,13 +225,20 @@ class RegisterPage extends StatelessWidget {
               child: Text(
                 'Sign Up',
                 style: GoogleFonts.poppins(
-                  color: ColorPalette.primaryColor,
+                  color: Colors.white,
                   fontSize: 16.0,
-                  fontWeight: FontWeight.w400
-                ),
+                  fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
               decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
+                    ColorPalette.gradientLeft,
+                    ColorPalette.gradientRight
+                  ]
+                ),
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
                 boxShadow: [

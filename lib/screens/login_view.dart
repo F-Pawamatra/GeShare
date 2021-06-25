@@ -188,23 +188,30 @@ class LoginPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 15.0),
             width: double.infinity,
             child: Text(
-              'Login',
+              'Sign in',
               style: GoogleFonts.poppins(
-                  color: ColorPalette.primaryColor,
+                  color: Colors.white,
                   fontSize: 16.0,
-                  fontWeight: FontWeight.w400),
+                  fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
             decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      spreadRadius: 1,
-                      blurRadius: 10,
-                      offset: Offset(0, 2))
-                ]),
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  ColorPalette.gradientLeft,
+                  ColorPalette.gradientRight
+                ],
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: Offset(0, 2))
+              ]),
           ),
           onTap: () {
             _submit(context);
@@ -218,7 +225,7 @@ class LoginPage extends StatelessWidget {
             'Dont have an account? ',
             style: GoogleFonts.poppins(
               color: Colors.white,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.w300,
               fontSize: 16.0,
             ),
           ),
@@ -227,7 +234,8 @@ class LoginPage extends StatelessWidget {
               'Sign Up',
               style: GoogleFonts.poppins(
                 decoration: TextDecoration.underline,
-                color: Colors.white,
+                color: ColorPalette.gradientLeft,
+                fontWeight: FontWeight.w600,
                 fontSize: 16.0,
               ),
             ),
