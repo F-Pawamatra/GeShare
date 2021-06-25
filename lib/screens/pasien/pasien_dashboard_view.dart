@@ -16,7 +16,41 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: null,
+        automaticallyImplyLeading: false,
+        title: const Text("Dashboard"),
+        actions: <Widget>[
+          Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              IconButton(
+                padding: EdgeInsets.only(top: 2),
+                onPressed: null,
+                icon: const Icon(
+                  Icons.chat_bubble,
+                  color: Colors.white,
+                ),
+              ),
+              Container(
+                child: Text(
+                  "!",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold
+                  )
+                )
+              )
+            ],
+          ),
+          CircleAvatar(),
+          Padding(padding: EdgeInsets.only(right: 16.0))
+        ],
+      ),
       body: Container(
+        decoration: BoxDecoration(color: Colors.blue),
         child: Text('Hai Sayang'),
       ),
     );
