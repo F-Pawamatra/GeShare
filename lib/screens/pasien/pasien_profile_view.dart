@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
-import 'package:ge_share/screens/pasien/article_part.dart';
-import 'package:ge_share/screens/pasien/need_list_part.dart';
-import 'package:ge_share/screens/pasien/pasien_profile_view.dart';
+import 'package:ge_share/screens/pasien/biodata_part.dart';
+import 'package:ge_share/screens/pasien/statistic_part.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-enum WidgetMarker { article, needList }
+enum WidgetMarker { biodata, statistic }
 
-class PasienDashboardPage extends StatefulWidget {
-  const PasienDashboardPage({ Key? key }) : super(key: key);
-
-  static const routeName = "/pasien/dashboard";
+class PasienProfilePage extends StatefulWidget {
+  const PasienProfilePage({ Key? key }) : super(key: key);
+  static const routeName = "/pasien/profile";
 
   @override
-  _PasienDashboardPageState createState() => _PasienDashboardPageState();
+  _PasienProfilePageState createState() => _PasienProfilePageState();
 }
 
-class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTickerProviderStateMixin {
-  WidgetMarker selectedWidgetMarker = WidgetMarker.article;
+class _PasienProfilePageState extends State<PasienProfilePage> with SingleTickerProviderStateMixin {
+  WidgetMarker selectedWidgetMarker = WidgetMarker.biodata;
 
   late AnimationController _controller;
   late Animation <double> _animation;
@@ -42,19 +40,7 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
       backgroundColor: ColorPalette.primaryColor,
       appBar: AppBar(
         backgroundColor: ColorPalette.primaryColor,
-        leading: null,
-        automaticallyImplyLeading: false,
-        title: Text(
-          "Dashboard",
-          style: GoogleFonts.poppins(
-            textStyle: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 17.0
-              )
-          ),
-        ),
-        actions: <Widget>[
+        actions: [
           Stack(
             alignment: Alignment.center,
             children: <Widget>[
@@ -78,51 +64,52 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
             ],
           ),
           Padding(padding: EdgeInsets.only(right: 16)),
-          FlatButton(
-            child: CircleAvatar(),
-            onPressed: () {
-              Navigator.pushNamed(context, PasienProfilePage.routeName);
-            },
-          ),
-          Padding(padding: EdgeInsets.only(right: 16.0))
         ],
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        width: double.infinity,
-        height: double.infinity,
-        padding: EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0),
+        margin: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            DefaultTextStyle(
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "Hello",
-                    style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25.0
-                        )
+          children: [
+            Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(90),
+                  child: Image.asset(
+                    'assets/images/vid4.png', 
+                    width: 150, 
+                    height: 150,
+                    fit: BoxFit.cover,
+                  )
+                ),
+                Padding(padding: EdgeInsets.only(left:30)),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Fery Adcovid',
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0
+                          )
+                      ),
                     ),
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 5.0)),
-                  Text(
-                    "Fery Adcovid",
-                    style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25.0
-                        )
+                    Align(
+                      child: Text(
+                        'Patient',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.0
+                            )
+                        ),
+                      ),
                     ),
-                  ),
-                ],
-              )
+                  ],
+                )
+              ],
             ),
             Row(
               children: [
@@ -139,13 +126,13 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                           end: Alignment.centerRight,
                           colors: [
                             (selectedWidgetMarker ==
-                                    WidgetMarker.article)
+                                    WidgetMarker.biodata
                                 ? ColorPalette.gradientLeft
-                                : Colors.transparent,
+                                : Colors.transparent),
                             (selectedWidgetMarker ==
-                                    WidgetMarker.article)
+                                    WidgetMarker.biodata
                                 ? ColorPalette.gradientRight
-                                : Colors.transparent,
+                                : Colors.transparent),
                           ]),
                       ),
                   child: FlatButton(
@@ -155,25 +142,22 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                             color: Color.fromRGBO(0, 160, 227, 0))),
                     onPressed: () {
                       setState(() {
-                        selectedWidgetMarker = WidgetMarker.article;
+                        selectedWidgetMarker = WidgetMarker.biodata;
                       });
                     },
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 0),
                     textColor: Colors.white,
                     child: Text(
-                      'Article',
-                      style: TextStyle(
-                          fontFamily: 'Poppins',
+                      'Biodata',
+                      style: GoogleFonts.poppins(
                           color: Colors.white,
-                          fontSize: 15.0),
+                          fontSize: 13.0),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(
-                      top: 20.0, bottom: 20.0, left: 5.0),
-                  // padding: EdgeInsets.all(7.0),
+                  margin: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 10.0),
                   width: 100,
                   height: 30,
                   decoration: BoxDecoration(
@@ -183,11 +167,11 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                           end: Alignment.centerRight,
                           colors: [
                             (selectedWidgetMarker ==
-                                    WidgetMarker.needList)
+                                    WidgetMarker.statistic)
                                 ? ColorPalette.gradientLeft
                                 : Colors.transparent,
                             (selectedWidgetMarker ==
-                                    WidgetMarker.needList)
+                                    WidgetMarker.statistic)
                                 ? ColorPalette.gradientRight
                                 : Colors.transparent,
                           ]),
@@ -199,18 +183,17 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                             color: Color.fromRGBO(0, 160, 227, 0))),
                     onPressed: () {
                       setState(() {
-                        selectedWidgetMarker = WidgetMarker.needList;
+                        selectedWidgetMarker = WidgetMarker.statistic;
                       });
                     },
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 0),
                     textColor: Colors.white,
                     child: Text(
-                      'Need List',
-                      style: TextStyle(
-                          fontFamily: 'Poppins',
+                      'Statistic',
+                      style: GoogleFonts.poppins(
                           color: Colors.white,
-                          fontSize: 15.0),
+                          fontSize: 13.0),
                     ),
                   ),
                 ),
@@ -224,9 +207,10 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
             )
           ],
         ),
-      ),
+      )
     );
   }
+
   _playAnimation() {
     _controller.reset();
     _controller.forward();
@@ -234,22 +218,22 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
 
   Widget getCustomContainer() {
     switch (selectedWidgetMarker) {
-      case WidgetMarker.article:
-        return getArticleContainer();
-      case WidgetMarker.needList:
-        return getNeedListContainer();
+      case WidgetMarker.biodata:
+        return getBiodataContainer();
+      case WidgetMarker.statistic:
+        return getStatisticContainer();
     }
     // return getinputExpensesContainer();
   }
 
-  Widget getArticleContainer() {
-    return ArticlePart(
+  Widget getBiodataContainer() {
+    return BiodataPart(
       animation: _animation,
     );
   }
 
-  Widget getNeedListContainer() {
-    return NeedListPart(
+  Widget getStatisticContainer() {
+    return StatisticPart(
       animation: _animation,
     );
   }
