@@ -9,6 +9,7 @@ class DashboardNeedsList extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: double.infinity,
+        padding: EdgeInsets.only(bottom: 16.0),
         child: Stack(
           children: <Widget>[
             Column(
@@ -25,7 +26,7 @@ class DashboardNeedsList extends StatelessWidget {
               ],
             ),
             Positioned(
-              bottom: 16,
+              bottom: 0,
               right: 0,
               child: ElevatedButton(
                 onPressed: () {},
