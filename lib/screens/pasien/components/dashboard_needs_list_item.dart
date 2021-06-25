@@ -27,7 +27,7 @@ class DashboardNeedsListItem extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
       child: DefaultTextStyle(
-        style: TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: 16, color: Colors.white),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

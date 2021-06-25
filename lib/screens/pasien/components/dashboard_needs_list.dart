@@ -25,8 +25,8 @@ class DashboardNeedsList extends StatelessWidget {
               ],
             ),
             Positioned(
-              bottom: 4,
-              right: 4,
+              bottom: 16,
+              right: 0,
               child: ElevatedButton(
                 onPressed: () {},
                 child: Icon(Icons.add, size: 40.0),
