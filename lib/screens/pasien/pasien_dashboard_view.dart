@@ -60,8 +60,25 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(color: Colors.blue),
-        child: Text('Hai Sayang'),
+        width: double.infinity,
+        height: double.infinity,
+        padding: EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            DefaultTextStyle(
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("Hello"),
+                  Padding(padding: EdgeInsets.only(top: 5.0)),
+                  Text("Fery Adcovid"),
+                ],
+              )
+            ),
+          ],
+        ),
       ),
     );
   }
