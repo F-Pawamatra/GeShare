@@ -115,7 +115,7 @@ class ChooseStorePage extends StatelessWidget {
                       ),
                       child: Center(
                         child: new Text(
-                          "$index",
+                          "> ${(index + 1) * 50000}",
                           style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
