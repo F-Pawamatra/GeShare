@@ -3,6 +3,9 @@ import 'package:ge_share/screens/login_view.dart';
 import 'package:ge_share/screens/register_view.dart';
 import 'package:ge_share/screens/pasien/pasien_dashboard_view.dart';
 import 'package:ge_share/screens/pasien/pasien_profile_view.dart';
+import 'package:ge_share/screens/donatur/donatur_dashboard_view.dart';
+import 'package:ge_share/screens/donatur/donatur_profile_view.dart';
+import 'package:ge_share/screens/donatur/donate_now_part.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,7 +17,11 @@ void main() {
       "/" : (context) => LoginPage(),
       RegisterPage.routeName : (context) => RegisterPage(),
       PasienDashboardPage.routeName : (context) => PasienDashboardPage(),
-      PasienProfilePage.routeName : (context) => PasienProfilePage()
+      PasienProfilePage.routeName : (context) => PasienProfilePage(),
+
+      DonaturDashboardPage.routeName : (context) => DonaturDashboardPage(),
+      DonaturProfilePage.routeName : (context) => DonaturProfilePage(),
+      // CalonPenerimaDonasi.routeName : (context) => CalonPenerimaDonasi(),
     },
   ));
 }

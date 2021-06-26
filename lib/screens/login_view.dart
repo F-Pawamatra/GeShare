@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
 import 'package:ge_share/screens/pasien/pasien_dashboard_view.dart';
+import 'package:ge_share/screens/donatur/donatur_dashboard_view.dart';
 import 'package:ge_share/screens/register_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +29,7 @@ class LoginPage extends StatelessWidget {
         Navigator.pushNamed(context, PasienDashboardPage.routeName);
       }
       else if (this.email == emailDonatur && this.password == passwordDonatur) {
-        
+        Navigator.pushNamed(context, DonaturDashboardPage.routeName);
       }
       else if (this.email == emailUMKM && this.password == passwordUMKM) {
 
