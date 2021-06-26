@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ge_share/screens/donatur/patient_found.dart';
 
 class DonationReceiver extends StatefulWidget {
-  final Animation<double> animation;
-  DonationReceiver({required this.animation});
-
+  
   static const routeName = "/donatur/dashboard/donation-receiver";
 
   @override
@@ -27,16 +26,16 @@ class _DonationReceiverState extends State<DonationReceiver> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent),
-      backgroundColor: Colors.black,
+      backgroundColor: ColorPalette.primaryColor,
       body: Container(
         width: double.infinity,
         child: DefaultTextStyle(
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.poppins(color: Colors.white),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text("Calon Penerima Donasi",
-                  style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold)),
+                  style: GoogleFonts.poppins(fontSize: 32.0, fontWeight: FontWeight.bold)),
               Padding(padding: EdgeInsets.only(top: 8.0)),
               Container(
                 width: double.infinity,
@@ -95,13 +94,13 @@ class _DonationReceiverState extends State<DonationReceiver> {
         children: <Widget>[
             Icon(Icons.circle, color: Colors.white, size: 5.0,),
             Padding(padding: EdgeInsets.only(left: 5.0)),
-            Text(needList[i], style: TextStyle(fontSize: 12.0))
+            Text(needList[i], style: GoogleFonts.poppins(fontSize: 12.0))
           ]);
     }
 
     return Container(
       decoration: BoxDecoration(
-          color: Colors.blue,
+          // color: Colors.blue,
           borderRadius: BorderRadius.circular(16.0),
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
@@ -112,27 +111,32 @@ class _DonationReceiverState extends State<DonationReceiver> {
               ]),
             ),
       padding: EdgeInsets.all(16.0),
-      child: Row(
-        children: <Widget>[
-          CircleAvatar(radius: 48.0,),
-          Flexible(
-            child: Container(
-              padding: EdgeInsets.only(left: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(name, style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold)),
-                  Padding(padding: EdgeInsets.only(top: 8.0)),
-                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: childs),
-                  Padding(padding: EdgeInsets.only(top: 8.0)),
-                  Text(
-                      address, overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 12.0),),
-                ],
+      child: InkWell(
+        child: Row(
+          children: <Widget>[
+            CircleAvatar(radius: 48.0, backgroundImage: AssetImage('assets/images/fery.jpg'),),
+            Flexible(
+              child: Container(
+                padding: EdgeInsets.only(left: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(name, style: GoogleFonts.poppins(fontSize: 22.0, fontWeight: FontWeight.bold)),
+                    Padding(padding: EdgeInsets.only(top: 8.0)),
+                    Column(crossAxisAlignment: CrossAxisAlignment.start, children: childs),
+                    Padding(padding: EdgeInsets.only(top: 8.0)),
+                    Text(
+                        address, overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.poppins(fontSize: 12.0),),
+                  ],
+                )
               )
             )
-          )
-        ]
+          ]
+        ),
+        onTap: (){
+          Navigator.pushNamed(context, PatientFoundPage.routeName);
+        },
       ),
     );
   }

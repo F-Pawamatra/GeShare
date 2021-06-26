@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
-import 'package:ge_share/screens/donatur/product_list.dart';
+import 'package:ge_share/screens/donatur/payment.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChooseStorePage extends StatelessWidget {
-  const ChooseStorePage({ Key? key }) : super(key: key);
-  static const routeName = "/donatur/choose_store";
+class ProductListPage extends StatelessWidget {
+  const ProductListPage({ Key? key }) : super(key: key);
+  static const routeName = "/donatur/product_list";
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class ChooseStorePage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Choose Store',
+                      'Choose Product',
                       style: GoogleFonts.poppins(
                         fontSize: 25.0,
                         fontWeight: FontWeight.w600,
@@ -65,7 +65,7 @@ class ChooseStorePage extends StatelessWidget {
                             vertical: 25, horizontal: 8),
                         fillColor: Colors.white,
                         filled: true,
-                        hintText: 'Search store that you want to buy',
+                        hintText: 'Search product that you want to donate',
                         hintStyle: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 16.0,
@@ -82,7 +82,7 @@ class ChooseStorePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.only(top: 30),
               child: Text(
-                'Price Categories',
+                'Categories',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 20.0,
@@ -116,7 +116,7 @@ class ChooseStorePage extends StatelessWidget {
                       ),
                       child: Center(
                         child: new Text(
-                          "< ${(index + 1) * 50000}",
+                          "Categories ${(index + 1)}",
                           style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
@@ -134,7 +134,7 @@ class ChooseStorePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.only(top: 30),
               child: Text(
-                'Nearest Store',
+                'Menu',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 20.0,
@@ -147,11 +147,11 @@ class ChooseStorePage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: InkWell(
                 child: Image.asset(
-                  'assets/images/store1.png',
+                  'assets/images/product1.png',
                   width: MediaQuery.of(context).size.width,
                 ),
                 onTap: (){
-                  Navigator.pushNamed(context, ProductListPage.routeName);
+                  Navigator.pushNamed(context, PaymentPage.routeName);
                 },
               ),
             ),
@@ -160,11 +160,24 @@ class ChooseStorePage extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: InkWell(
                 child: Image.asset(
-                  'assets/images/store2.png',
+                  'assets/images/product2.png',
                   width: MediaQuery.of(context).size.width,
                 ),
                 onTap: (){
-                  Navigator.pushNamed(context, ProductListPage.routeName);
+                  Navigator.pushNamed(context, PaymentPage.routeName);
+                },
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: InkWell(
+                child: Image.asset(
+                  'assets/images/product3.png',
+                  width: MediaQuery.of(context).size.width,
+                ),
+                onTap: (){
+                  Navigator.pushNamed(context, PaymentPage.routeName);
                 },
               ),
             ),
