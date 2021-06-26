@@ -77,9 +77,10 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
               )
             ],
           ),
-          Padding(padding: EdgeInsets.only(right: 16)),
           FlatButton(
-            child: CircleAvatar(),
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/fery.jpg'),
+            ),
             onPressed: () {
               Navigator.pushNamed(context, PasienProfilePage.routeName);
             },
@@ -101,7 +102,7 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Hello",
+                    "Hello,",
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                           color: Colors.white,
@@ -158,7 +159,7 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                         selectedWidgetMarker = WidgetMarker.article;
                       });
                     },
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(5.0),
                     color: Color.fromRGBO(0, 160, 227, 0),
                     textColor: Colors.white,
                     child: Text(
@@ -202,7 +203,7 @@ class _PasienDashboardPageState extends State<PasienDashboardPage> with SingleTi
                         selectedWidgetMarker = WidgetMarker.needList;
                       });
                     },
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(5.0),
                     color: Color.fromRGBO(0, 160, 227, 0),
                     textColor: Colors.white,
                     child: Text(

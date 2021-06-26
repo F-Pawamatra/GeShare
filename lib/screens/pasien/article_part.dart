@@ -63,6 +63,13 @@ class _ArticlePartState extends State<ArticlePart> {
                 width: MediaQuery.of(context).size.width,
               )
             ),
+            Padding(padding: EdgeInsets.only(bottom: 30)),
+            InkWell(
+              child: Image.asset(
+                'assets/images/art2.png',
+                width: MediaQuery.of(context).size.width,
+              )
+            ),
           ]
         ),
       )

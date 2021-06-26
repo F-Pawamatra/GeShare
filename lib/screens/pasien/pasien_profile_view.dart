@@ -66,146 +66,150 @@ class _PasienProfilePageState extends State<PasienProfilePage> with SingleTicker
           Padding(padding: EdgeInsets.only(right: 16)),
         ],
       ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(90),
-                  child: Image.asset(
-                    'assets/images/vid4.png', 
-                    width: 150, 
-                    height: 150,
-                    fit: BoxFit.cover,
-                  )
-                ),
-                Padding(padding: EdgeInsets.only(left:30)),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Fery Adcovid',
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0
-                          )
-                      ),
-                    ),
-                    Align(
-                      child: Text(
-                        'Patient',
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(90),
+                    child: Image.asset(
+                      'assets/images/fery.jpg', 
+                      width: 100, 
+                      height: 100,
+                      fit: BoxFit.cover,
+                    )
+                  ),
+                  Padding(padding: EdgeInsets.only(left:20)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Fery Adcovid',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                               color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.0
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0
                             )
                         ),
                       ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(
-                      top: 20.0, bottom: 20.0, right: 5.0),
-                  // padding: EdgeInsets.all(7.0),
-                  width: 100,
-                  height: 30,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [
-                            (selectedWidgetMarker ==
-                                    WidgetMarker.biodata
-                                ? ColorPalette.gradientLeft
-                                : Colors.transparent),
-                            (selectedWidgetMarker ==
-                                    WidgetMarker.biodata
-                                ? ColorPalette.gradientRight
-                                : Colors.transparent),
-                          ]),
+                      Align(
+                        child: Text(
+                          'Patient',
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14.0
+                              )
+                          ),
+                        ),
                       ),
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
-                        side: BorderSide(
-                            color: Color.fromRGBO(0, 160, 227, 0))),
-                    onPressed: () {
-                      setState(() {
-                        selectedWidgetMarker = WidgetMarker.biodata;
-                      });
-                    },
-                    padding: EdgeInsets.all(10.0),
-                    color: Color.fromRGBO(0, 160, 227, 0),
-                    textColor: Colors.white,
-                    child: Text(
-                      'Biodata',
-                      style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontSize: 13.0),
+                    ],
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: 20.0, bottom: 20.0, right: 5.0, left: 10),
+                    // padding: EdgeInsets.all(7.0),
+                    width: 100,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              (selectedWidgetMarker ==
+                                      WidgetMarker.biodata
+                                  ? ColorPalette.gradientLeft
+                                  : Colors.transparent),
+                              (selectedWidgetMarker ==
+                                      WidgetMarker.biodata
+                                  ? ColorPalette.gradientRight
+                                  : Colors.transparent),
+                            ]),
+                        ),
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0.0),
+                          side: BorderSide(
+                              color: Color.fromRGBO(0, 160, 227, 0))),
+                      onPressed: () {
+                        setState(() {
+                          selectedWidgetMarker = WidgetMarker.biodata;
+                        });
+                      },
+                      padding: EdgeInsets.all(5.0),
+                      color: Color.fromRGBO(0, 160, 227, 0),
+                      textColor: Colors.white,
+                      child: Text(
+                        'Biodata',
+                        style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13.0),
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 10.0),
-                  width: 100,
-                  height: 30,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [
-                            (selectedWidgetMarker ==
-                                    WidgetMarker.statistic)
-                                ? ColorPalette.gradientLeft
-                                : Colors.transparent,
-                            (selectedWidgetMarker ==
-                                    WidgetMarker.statistic)
-                                ? ColorPalette.gradientRight
-                                : Colors.transparent,
-                          ]),
+                  Container(
+                    margin: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 10.0),
+                    width: 100,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              (selectedWidgetMarker ==
+                                      WidgetMarker.statistic)
+                                  ? ColorPalette.gradientLeft
+                                  : Colors.transparent,
+                              (selectedWidgetMarker ==
+                                      WidgetMarker.statistic)
+                                  ? ColorPalette.gradientRight
+                                  : Colors.transparent,
+                            ]),
+                        ),
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0.0),
+                          side: BorderSide(
+                              color: Color.fromRGBO(0, 160, 227, 0))),
+                      onPressed: () {
+                        setState(() {
+                          selectedWidgetMarker = WidgetMarker.statistic;
+                        });
+                      },
+                      padding: EdgeInsets.all(5.0),
+                      color: Color.fromRGBO(0, 160, 227, 0),
+                      textColor: Colors.white,
+                      child: Text(
+                        'Statistic',
+                        style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13.0),
                       ),
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
-                        side: BorderSide(
-                            color: Color.fromRGBO(0, 160, 227, 0))),
-                    onPressed: () {
-                      setState(() {
-                        selectedWidgetMarker = WidgetMarker.statistic;
-                      });
-                    },
-                    padding: EdgeInsets.all(10.0),
-                    color: Color.fromRGBO(0, 160, 227, 0),
-                    textColor: Colors.white,
-                    child: Text(
-                      'Statistic',
-                      style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontSize: 13.0),
                     ),
                   ),
-                ),
-              ],
-            ),
-            FutureBuilder(
-              future: _playAnimation(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                return getCustomContainer();
-              },
-            )
-          ],
+                ],
+              ),
+              FutureBuilder(
+                future: _playAnimation(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  return getCustomContainer();
+                },
+              )
+            ],
+          ),
         ),
       )
     );

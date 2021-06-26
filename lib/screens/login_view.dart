@@ -41,6 +41,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: MediaQuery.of(context).size.width,
         color: ColorPalette.primaryColor,
         padding: EdgeInsets.all(20.0),
         child: ListView(
@@ -186,7 +187,7 @@ class LoginPage extends StatelessWidget {
         InkWell(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 15.0),
-            width: double.infinity,
+            width: MediaQuery.of(context).size.width,
             child: Text(
               'Sign in',
               style: GoogleFonts.poppins(

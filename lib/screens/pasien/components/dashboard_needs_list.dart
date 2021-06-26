@@ -16,12 +16,13 @@ class DashboardNeedsList extends StatelessWidget {
               children: <Widget>[
                 DashboardNeedsListItem(
                   tagText: "Food",
-                  tagColor: Colors.green.shade400
+                  
+                  tagColor: Color.fromRGBO(37, 249, 135, 1)
                 ),
                 Padding(padding: EdgeInsets.only(top: 24.0),),
                 DashboardNeedsListItem(
                   tagText: "Medicine",
-                  tagColor: Colors.orange.shade600
+                  tagColor: Color.fromRGBO(249, 164, 37, 1)
                 ),
               ],
             ),

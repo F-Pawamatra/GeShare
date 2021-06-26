@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/screens/pasien/components/dashboard_needs_list.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DashboardNeedsListItem extends StatelessWidget {
 
@@ -33,17 +34,26 @@ class DashboardNeedsListItem extends StatelessWidget {
           children: <Widget>[
             Text(
               title,
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 8.0)),
-            Text(shortDescription),
+            Text(
+              shortDescription,
+              style: GoogleFonts.poppins(),
+              ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
             Container(
               padding: EdgeInsets.fromLTRB(24, 4, 24, 4),
-              child: Text(tagText),
+              child: Text(
+                tagText,
+                style: GoogleFonts.poppins(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500
+                ),
+              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
                 color: tagColor,
