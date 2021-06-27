@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
 import 'package:ge_share/screens/umkm/article_part.dart';
-import 'package:ge_share/screens/umkm/donate_now_part.dart';
+import 'package:ge_share/screens/umkm/my_product_part.dart';
 import 'package:ge_share/screens/umkm/umkm_profile_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-enum WidgetMarker { article, donateNow }
+enum WidgetMarker { article, myProduct }
 
 class UMKMDashboardPage extends StatefulWidget {
   const UMKMDashboardPage({ Key? key }) : super(key: key);
@@ -79,7 +79,7 @@ class _UMKMDashboardPageState extends State<UMKMDashboardPage> with SingleTicker
           ),
           FlatButton(
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/fery.jpg'),
+              backgroundImage: AssetImage('assets/images/atar.png'),
             ),
             onPressed: () {
               Navigator.pushNamed(context, UMKMProfilePage.routeName);
@@ -113,7 +113,7 @@ class _UMKMDashboardPageState extends State<UMKMDashboardPage> with SingleTicker
                   ),
                   Padding(padding: EdgeInsets.only(top: 5.0)),
                   Text(
-                    "Gesultani Nova",
+                    "Akhtar Mulyana",
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                           color: Colors.white,
@@ -184,11 +184,11 @@ class _UMKMDashboardPageState extends State<UMKMDashboardPage> with SingleTicker
                           end: Alignment.centerRight,
                           colors: [
                             (selectedWidgetMarker ==
-                                    WidgetMarker.donateNow)
+                                    WidgetMarker.myProduct)
                                 ? ColorPalette.gradientLeft
                                 : Colors.transparent,
                             (selectedWidgetMarker ==
-                                    WidgetMarker.donateNow)
+                                    WidgetMarker.myProduct)
                                 ? ColorPalette.gradientRight
                                 : Colors.transparent,
                           ]),
@@ -200,7 +200,7 @@ class _UMKMDashboardPageState extends State<UMKMDashboardPage> with SingleTicker
                             color: Color.fromRGBO(0, 160, 227, 0))),
                     onPressed: () {
                       setState(() {
-                        selectedWidgetMarker = WidgetMarker.donateNow;
+                        selectedWidgetMarker = WidgetMarker.myProduct;
                       });
                     },
                     padding: EdgeInsets.all(5.0),
@@ -237,8 +237,8 @@ class _UMKMDashboardPageState extends State<UMKMDashboardPage> with SingleTicker
     switch (selectedWidgetMarker) {
       case WidgetMarker.article:
         return getArticleContainer();
-      case WidgetMarker.donateNow:
-        return getDonateNowContainer();
+      case WidgetMarker.myProduct:
+        return getMyProductContainer();
     }
     // return getinputExpensesContainer();
   }
@@ -249,8 +249,8 @@ class _UMKMDashboardPageState extends State<UMKMDashboardPage> with SingleTicker
     );
   }
 
-  Widget getDonateNowContainer() {
-    return DonateNowPart(
+  Widget getMyProductContainer() {
+    return MyProductPart(
       animation: _animation,
     );
   }

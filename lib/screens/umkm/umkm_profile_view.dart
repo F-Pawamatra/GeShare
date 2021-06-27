@@ -76,7 +76,7 @@ class _UMKMProfilePageState extends State<UMKMProfilePage> with SingleTickerProv
                   ClipRRect(
                     borderRadius: BorderRadius.circular(90),
                     child: Image.asset(
-                      'assets/images/fery.jpg', 
+                      'assets/images/atar.png', 
                       width: 100, 
                       height: 100,
                       fit: BoxFit.cover,
@@ -87,7 +87,7 @@ class _UMKMProfilePageState extends State<UMKMProfilePage> with SingleTickerProv
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Gesultani Nova',
+                        'Akhtar Mulyana',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                               color: Colors.white,

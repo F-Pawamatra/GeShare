@@ -36,7 +36,7 @@ class _BiodataPartState extends State<BiodataPart> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: nama,
                             style: GoogleFonts.poppins(
@@ -63,7 +63,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: phone,
                             style: GoogleFonts.poppins(
@@ -90,7 +90,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: email,
                             style: GoogleFonts.poppins(
@@ -117,7 +117,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: location,
                             style: GoogleFonts.poppins(
@@ -144,7 +144,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: gender,
                             style: GoogleFonts.poppins(

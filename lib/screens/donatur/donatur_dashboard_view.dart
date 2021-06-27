@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
+import 'package:ge_share/screens/donatur/article_part.dart';
+import 'package:ge_share/screens/donatur/donate_now_part.dart';
 import 'package:ge_share/screens/donatur/donation_receiver_view.dart';
 import 'package:ge_share/screens/donatur/donatur_profile_view.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+enum WidgetMarker { article, donateNow }
 
 class DonaturDashboardPage extends StatefulWidget {
   const DonaturDashboardPage({ Key? key }) : super(key: key);
@@ -14,9 +18,17 @@ class DonaturDashboardPage extends StatefulWidget {
 }
 
 class _DonaturDashboardPageState extends State<DonaturDashboardPage> with SingleTickerProviderStateMixin {
+  WidgetMarker selectedWidgetMarker = WidgetMarker.article;
+
+  late AnimationController _controller;
+  late Animation <double> _animation;
+
   @override
   void initState() {
     super.initState();
+    _controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    _animation = Tween(begin: 0.0, end: 1.0).animate(_controller);
   }
 
   @override
@@ -127,8 +139,14 @@ class _DonaturDashboardPageState extends State<DonaturDashboardPage> with Single
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                           colors: [
-                            ColorPalette.gradientLeft,
-                            ColorPalette.gradientRight
+                            (selectedWidgetMarker ==
+                                    WidgetMarker.article)
+                                ? ColorPalette.gradientLeft
+                                : Colors.transparent,
+                            (selectedWidgetMarker ==
+                                    WidgetMarker.article)
+                                ? ColorPalette.gradientRight
+                                : Colors.transparent,
                           ]),
                       ),
                   child: FlatButton(
@@ -137,6 +155,9 @@ class _DonaturDashboardPageState extends State<DonaturDashboardPage> with Single
                         side: BorderSide(
                             color: Color.fromRGBO(0, 160, 227, 0))),
                     onPressed: () {
+                      setState(() {
+                        selectedWidgetMarker = WidgetMarker.article;
+                      });
                     },
                     padding: EdgeInsets.all(5.0),
                     color: Color.fromRGBO(0, 160, 227, 0),
@@ -162,8 +183,14 @@ class _DonaturDashboardPageState extends State<DonaturDashboardPage> with Single
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                           colors: [
-                            Colors.transparent,
-                            Colors.transparent,
+                            (selectedWidgetMarker ==
+                                    WidgetMarker.donateNow)
+                                ? ColorPalette.gradientLeft
+                                : Colors.transparent,
+                            (selectedWidgetMarker ==
+                                    WidgetMarker.donateNow)
+                                ? ColorPalette.gradientRight
+                                : Colors.transparent,
                           ]),
                       ),
                   child: FlatButton(
@@ -172,7 +199,9 @@ class _DonaturDashboardPageState extends State<DonaturDashboardPage> with Single
                         side: BorderSide(
                             color: Color.fromRGBO(0, 160, 227, 0))),
                     onPressed: () {
-                      Navigator.pushNamed(context, DonationReceiver.routeName);
+                      setState(() {
+                        selectedWidgetMarker = WidgetMarker.donateNow;
+                      });
                     },
                     padding: EdgeInsets.all(5.0),
                     color: Color.fromRGBO(0, 160, 227, 0),
@@ -188,56 +217,41 @@ class _DonaturDashboardPageState extends State<DonaturDashboardPage> with Single
                 ),
               ],
             ),
-            Container(
-              child: Column(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/vid1.png',
-                          width: MediaQuery.of(context).size.width/5,
-                        ),
-                        Padding(padding: EdgeInsets.only(left: 8)),
-                        Image.asset(
-                          'assets/images/vid2.png',
-                          width: MediaQuery.of(context).size.width/5,
-                        ),
-                        Padding(padding: EdgeInsets.only(left: 8)),
-                        Image.asset(
-                          'assets/images/vid3.png',
-                          width: MediaQuery.of(context).size.width/5,
-                        ),
-                        Padding(padding: EdgeInsets.only(left: 8)),
-                        Image.asset(
-                          'assets/images/vid4.png',
-                          width: MediaQuery.of(context).size.width/5,
-                        ),
-                      ]
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(bottom: 30)),
-                  InkWell(
-                    child: Image.asset(
-                      'assets/images/art1.png',
-                      width: MediaQuery.of(context).size.width,
-                    )
-                  ),
-                  Padding(padding: EdgeInsets.only(bottom: 30)),
-                  InkWell(
-                    child: Image.asset(
-                      'assets/images/art2.png',
-                      width: MediaQuery.of(context).size.width,
-                    )
-                  ),
-                ]
-              ),
+            FutureBuilder(
+              future: _playAnimation(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                return getCustomContainer();
+              },
             )
           ],
         ),
       ),
+    );
+  }
+  _playAnimation() {
+    _controller.reset();
+    _controller.forward();
+  }
+
+  Widget getCustomContainer() {
+    switch (selectedWidgetMarker) {
+      case WidgetMarker.article:
+        return getArticleContainer();
+      case WidgetMarker.donateNow:
+        return getDonateNowContainer();
+    }
+    // return getinputExpensesContainer();
+  }
+
+  Widget getArticleContainer() {
+    return ArticlePart(
+      animation: _animation,
+    );
+  }
+
+  Widget getDonateNowContainer() {
+    return DonateNowPart(
+      animation: _animation,
     );
   }
 }

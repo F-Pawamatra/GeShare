@@ -11,11 +11,11 @@ class BiodataPart extends StatefulWidget {
 }
 
 class _BiodataPartState extends State<BiodataPart> {
-  String nama = 'Gesultani Nova';
-  String phone = '082345678910';
-  String email = 'gesultaninova@email.com';
-  String location = 'Yogyakarta';
-  String gender = 'Female';
+  String nama = 'Toko Maju Mundur';
+  String phone = '082356564710';
+  String email = 'akhtarmulyana@email.com';
+  String location = 'My Lovely City Jepara';
+  String businnesKey = 'BP0167HS883H7J';
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _BiodataPartState extends State<BiodataPart> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: nama,
                             style: GoogleFonts.poppins(
@@ -52,7 +52,7 @@ class _BiodataPartState extends State<BiodataPart> {
                                     vertical: 25, horizontal: 8),
                                 fillColor: Color.fromRGBO(205, 196, 221, 0.17),
                                 filled: true,
-                                labelText: 'Full Name',
+                                labelText: 'Business Name',
                                 labelStyle: GoogleFonts.roboto(
                                     textStyle: TextStyle(
                                         fontSize: 18.0,
@@ -63,7 +63,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: phone,
                             style: GoogleFonts.poppins(
@@ -90,7 +90,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: email,
                             style: GoogleFonts.poppins(
@@ -117,7 +117,7 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
                             initialValue: location,
                             style: GoogleFonts.poppins(
@@ -144,15 +144,15 @@ class _BiodataPartState extends State<BiodataPart> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(vertical: 7),
                           child: TextFormField(
-                            initialValue: gender,
+                            initialValue: businnesKey,
                             style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
                                     fontSize: 18.0, color: Colors.white)),
                             decoration: InputDecoration(
                                 prefixIcon: Icon(
-                                  Icons.female,
+                                  Icons.store,
                                   color: Color.fromRGBO(171, 165, 165, 1),
                                   size: 30,
                                 ),
@@ -160,7 +160,7 @@ class _BiodataPartState extends State<BiodataPart> {
                                     vertical: 25, horizontal: 8),
                                 fillColor: Color.fromRGBO(205, 196, 221, 0.17),
                                 filled: true,
-                                labelText: 'Gender',
+                                labelText: 'Business Key',
                                 labelStyle: GoogleFonts.roboto(
                                     textStyle: TextStyle(
                                         fontSize: 18.0,
