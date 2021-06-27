@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
 import 'package:ge_share/screens/donatur/article_part.dart';
 import 'package:ge_share/screens/donatur/donate_now_part.dart';
-import 'package:ge_share/screens/donatur/donation_receiver_view.dart';
 import 'package:ge_share/screens/donatur/donatur_profile_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -79,7 +78,7 @@ class _DonaturDashboardPageState extends State<DonaturDashboardPage> with Single
           ),
           FlatButton(
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/fery.jpg'),
+              backgroundImage: AssetImage('assets/images/gesti.png'),
             ),
             onPressed: () {
               Navigator.pushNamed(context, DonaturProfilePage.routeName);

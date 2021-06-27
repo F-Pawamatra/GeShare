@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
   swipebuttonflutter: ^1.0.0
+  flutter_share_me: ^0.10.1
 
 dev_dependencies:
   flutter_test:

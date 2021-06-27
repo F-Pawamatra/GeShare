@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
+import 'package:ge_share/screens/login_view.dart';
 import 'package:ge_share/screens/pasien/biodata_part.dart';
-import 'package:ge_share/screens/pasien/statistic_part.dart';
+import 'package:ge_share/screens/pasien/medical_report_part.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-enum WidgetMarker { biodata, statistic }
+enum WidgetMarker { biodata, medicalReport }
 
 class PasienProfilePage extends StatefulWidget {
   const PasienProfilePage({ Key? key }) : super(key: key);
@@ -41,28 +42,16 @@ class _PasienProfilePageState extends State<PasienProfilePage> with SingleTicker
       appBar: AppBar(
         backgroundColor: ColorPalette.primaryColor,
         actions: [
-          Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              IconButton(
-                padding: EdgeInsets.only(top: 2),
-                onPressed: null,
-                icon: const Icon(
-                  Icons.chat_bubble,
-                  color: Colors.white,
-                ),
+          IconButton(
+              padding: EdgeInsets.only(top: 2),
+              onPressed: () {
+                Navigator.pushNamed(context, LoginPage.routeName);
+              },
+              icon: const Icon(
+                Icons.logout,
+                color: Colors.white,
               ),
-              Container(
-                child: Text(
-                  "!",
-                  style: GoogleFonts.poppins(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold
-                  )
-                )
-              )
-            ],
-          ),
+            ),
           Padding(padding: EdgeInsets.only(right: 16)),
         ],
       ),
@@ -169,11 +158,11 @@ class _PasienProfilePageState extends State<PasienProfilePage> with SingleTicker
                             end: Alignment.centerRight,
                             colors: [
                               (selectedWidgetMarker ==
-                                      WidgetMarker.statistic)
+                                      WidgetMarker.medicalReport)
                                   ? ColorPalette.gradientLeft
                                   : Colors.transparent,
                               (selectedWidgetMarker ==
-                                      WidgetMarker.statistic)
+                                      WidgetMarker.medicalReport)
                                   ? ColorPalette.gradientRight
                                   : Colors.transparent,
                             ]),
@@ -185,14 +174,14 @@ class _PasienProfilePageState extends State<PasienProfilePage> with SingleTicker
                               color: Color.fromRGBO(0, 160, 227, 0))),
                       onPressed: () {
                         setState(() {
-                          selectedWidgetMarker = WidgetMarker.statistic;
+                          selectedWidgetMarker = WidgetMarker.medicalReport;
                         });
                       },
                       padding: EdgeInsets.all(5.0),
                       color: Color.fromRGBO(0, 160, 227, 0),
                       textColor: Colors.white,
                       child: Text(
-                        'Statistic',
+                        'MedicalReport',
                         style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -224,8 +213,8 @@ class _PasienProfilePageState extends State<PasienProfilePage> with SingleTicker
     switch (selectedWidgetMarker) {
       case WidgetMarker.biodata:
         return getBiodataContainer();
-      case WidgetMarker.statistic:
-        return getStatisticContainer();
+      case WidgetMarker.medicalReport:
+        return getMedicalReportContainer();
     }
     // return getinputExpensesContainer();
   }
@@ -236,8 +225,8 @@ class _PasienProfilePageState extends State<PasienProfilePage> with SingleTicker
     );
   }
 
-  Widget getStatisticContainer() {
-    return StatisticPart(
+  Widget getMedicalReportContainer() {
+    return MedicalReportPart(
       animation: _animation,
     );
   }

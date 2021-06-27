@@ -7,6 +7,7 @@ import 'package:ge_share/screens/umkm/umkm_dashboard_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
+  static const routeName = "/";
   final _formKey = GlobalKey<FormState>();
   String? email;
   String? password;

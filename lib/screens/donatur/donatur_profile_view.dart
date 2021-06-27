@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
 import 'package:ge_share/screens/donatur/biodata_part.dart';
-import 'package:ge_share/screens/donatur/statistic_part.dart';
+import 'package:ge_share/screens/donatur/donations_part.dart';
+import 'package:ge_share/screens/login_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-enum WidgetMarker { biodata, statistic }
+enum WidgetMarker { biodata, donations }
 
 class DonaturProfilePage extends StatefulWidget {
   const DonaturProfilePage({ Key? key }) : super(key: key);
@@ -41,28 +42,16 @@ class _DonaturProfilePageState extends State<DonaturProfilePage> with SingleTick
       appBar: AppBar(
         backgroundColor: ColorPalette.primaryColor,
         actions: [
-          Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              IconButton(
-                padding: EdgeInsets.only(top: 2),
-                onPressed: null,
-                icon: const Icon(
-                  Icons.chat_bubble,
-                  color: Colors.white,
-                ),
+          IconButton(
+              padding: EdgeInsets.only(top: 2),
+              onPressed: () {
+                Navigator.pushNamed(context, LoginPage.routeName);
+              },
+              icon: const Icon(
+                Icons.logout,
+                color: Colors.white,
               ),
-              Container(
-                child: Text(
-                  "!",
-                  style: GoogleFonts.poppins(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold
-                  )
-                )
-              )
-            ],
-          ),
+            ),
           Padding(padding: EdgeInsets.only(right: 16)),
         ],
       ),
@@ -76,7 +65,7 @@ class _DonaturProfilePageState extends State<DonaturProfilePage> with SingleTick
                   ClipRRect(
                     borderRadius: BorderRadius.circular(90),
                     child: Image.asset(
-                      'assets/images/fery.jpg', 
+                      'assets/images/gesti.png', 
                       width: 100, 
                       height: 100,
                       fit: BoxFit.cover,
@@ -169,11 +158,11 @@ class _DonaturProfilePageState extends State<DonaturProfilePage> with SingleTick
                             end: Alignment.centerRight,
                             colors: [
                               (selectedWidgetMarker ==
-                                      WidgetMarker.statistic)
+                                      WidgetMarker.donations)
                                   ? ColorPalette.gradientLeft
                                   : Colors.transparent,
                               (selectedWidgetMarker ==
-                                      WidgetMarker.statistic)
+                                      WidgetMarker.donations)
                                   ? ColorPalette.gradientRight
                                   : Colors.transparent,
                             ]),
@@ -185,14 +174,14 @@ class _DonaturProfilePageState extends State<DonaturProfilePage> with SingleTick
                               color: Color.fromRGBO(0, 160, 227, 0))),
                       onPressed: () {
                         setState(() {
-                          selectedWidgetMarker = WidgetMarker.statistic;
+                          selectedWidgetMarker = WidgetMarker.donations;
                         });
                       },
                       padding: EdgeInsets.all(5.0),
                       color: Color.fromRGBO(0, 160, 227, 0),
                       textColor: Colors.white,
                       child: Text(
-                        'Statistic',
+                        'Donations',
                         style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -224,8 +213,8 @@ class _DonaturProfilePageState extends State<DonaturProfilePage> with SingleTick
     switch (selectedWidgetMarker) {
       case WidgetMarker.biodata:
         return getBiodataContainer();
-      case WidgetMarker.statistic:
-        return getStatisticContainer();
+      case WidgetMarker.donations:
+        return getdonationsContainer();
     }
     // return getinputExpensesContainer();
   }
@@ -236,8 +225,8 @@ class _DonaturProfilePageState extends State<DonaturProfilePage> with SingleTick
     );
   }
 
-  Widget getStatisticContainer() {
-    return StatisticPart(
+  Widget getdonationsContainer() {
+    return DonationsPart(
       animation: _animation,
     );
   }

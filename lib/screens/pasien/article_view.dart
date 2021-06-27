@@ -3,20 +3,20 @@ import 'package:ge_share/constants/const_color.dart';
 import 'package:ge_share/screens/donatur/donatur_dashboard_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DonateDonePage extends StatelessWidget {
-  const DonateDonePage({Key? key}) : super(key: key);
-  static const routeName = "/donatur/donate_done";
+class ArticleViewPage extends StatelessWidget {
+  const ArticleViewPage({Key? key}) : super(key: key);
+  static const routeName = "/article_view";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ColorPalette.primaryColor,
-        body: Column(
+        body: ListView(
           children: [
             Container(
               child: Image(
                 image: AssetImage(
-                  'assets/images/finish.png',
+                  'assets/images/article.png',
                 ),
                 fit: BoxFit.fill,
               ),
@@ -29,85 +29,66 @@ class DonateDonePage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Payment Details',
-                      style: GoogleFonts.poppins(
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 20))
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Date of Donation: 30 June 2021 \nAmount Paid Rp 550.000,00',
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue leo a rutrum egestas. Donec tincidunt lobortis leo et gravida. Nullam maximus nec urna et tincidunt. Mauris at diam eu nulla elementum ornare.',
                       style: GoogleFonts.poppins(
                           fontSize: 15.0,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 20))
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Thank your for your kindness for sharing your donation. We hope that we all safe with this pandemic. Stay Safe!',
-                      style: GoogleFonts.poppins(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(top: 20))
-                ],
-              ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 70)),
-            Container(
-                height: 50.0,
-                // width: MediaQuery.of(context).size.width/2,
-                margin: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width / 6),
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                          ColorPalette.gradientLeft,
-                          ColorPalette.gradientRight
-                        ]),
-                    borderRadius: BorderRadius.circular(10)),
-                child: InkWell(
-                  child: Center(
-                    child: Text(
-                      'Share your story',
-                      style: GoogleFonts.poppins(
-                          color: Colors.white,
                           fontWeight: FontWeight.w400,
-                          fontSize: 15),
+                          color: Colors.white),
                     ),
                   ),
-                  onTap: () {
-                    // Navigator.pushNamed(context, DonateDonePage.routeName);
-                  },
-                )),
+                  Padding(padding: EdgeInsets.only(top: 20))
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/4),
+              child: Image.asset('assets/images/article2.png')
+            ),
+            Padding(padding: EdgeInsets.only(top: 20)),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Fusce nec tellus non lacus faucibus auctor. Cras eu leo ut purus tristique ultricies sed quis turpis. Nam dolor orci, aliquet nec euismod sit amet, malesuada eu mi. Aliquam sit amet risus nisl. Aenean vulputate turpis enim, ut tristique mi dignissim at. Integer gravida mauris ligula, ut ornare nisi luctus quis. Aenean volutpat pharetra dolor ac fermentum. Pellentesque mattis sed ligula in ornare. ',
+                      style: GoogleFonts.poppins(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 20))
+                ],
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 5)),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/4),
+              child: Image.asset('assets/images/kentang.png')
+            ),
+            Padding(padding: EdgeInsets.only(top: 20)),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Duis volutpat scelerisque enim in lacinia. Vestibulum ut erat et urna fermentum dignissim. Quisque ac magna tincidunt, auctor eros eget, tincidunt massa. Pellentesque ac condimentum sapien. Duis quis consectetur mauris, ut fringilla odio. Sed tempus eros ac nisi commodo, viverra iaculis dolor lacinia. Maecenas id elit pulvinar, molestie quam id, scelerisque dolor. Cras sed tempor nibh.',
+                      style: GoogleFonts.poppins(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 20))
+                ],
+              ),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
             TextButton(
               child: Text(
@@ -120,7 +101,7 @@ class DonateDonePage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, DonaturDashboardPage.routeName);
+                Navigator.pop(context, true);
               },
             )
           ],

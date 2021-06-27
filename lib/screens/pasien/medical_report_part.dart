@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:ge_share/constants/const_color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StatisticPart extends StatefulWidget {
+class MedicalReportPart extends StatefulWidget {
   final Animation<double> animation;
-  StatisticPart({required this.animation});
+  MedicalReportPart({required this.animation});
 
   @override
-  _StatisticPartState createState() => _StatisticPartState();
+  _MedicalReportPartState createState() => _MedicalReportPartState();
 }
 
-class _StatisticPartState extends State<StatisticPart> {
+class _MedicalReportPartState extends State<MedicalReportPart> {
   @override
   Widget build(BuildContext context) {
     return Container(
